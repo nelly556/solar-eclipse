@@ -1,0 +1,15 @@
+function nextSolarEclipse() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var nextEclipse;
+  
+    while (nextEclipse == null) {
+        var eclipse = calculateSolarEclipse(year);
+        if (eclipse > now) {
+            nextEclipse = eclipse;
+        } else {
+            year++;
+        }
+    }
+    return nextEclipse;
+}
